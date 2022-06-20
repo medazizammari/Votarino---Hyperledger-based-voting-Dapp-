@@ -1,0 +1,31 @@
+<div class="navbar-container">
+  <div class="navbar-logo">
+
+    <a class="logo" [routerLink]="['/']"><h5>votarino</h5></a>
+  </div>
+
+  <nb-select size="small" [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+  </nb-select>
+  <a class="navbar-link"  [routerLink]="['/about']">
+    About
+  </a>
+  <a class="navbar-link"  [routerLink]="['/faq']">
+    Faq
+  </a>
+  <a class="navbar-link"  [routerLink]="['/contact']">
+    Contact
+  </a>
+  <nb-actions *ngIf="isLogged" size="small" class="navbar-actions">
+    <nb-action *ngIf="userRole=='voter'" class="user-action" icon="person-outline" nbContextMenuTag="navbar_menu" [nbContextMenu]="user_items">
+      
+    </nb-action>
+    <nb-action *ngIf="userRole=='admin'" class="user-action" icon="person-outline" nbContextMenuTag="navbar_menu" [nbContextMenu]="admin_items">
+      
+    </nb-action>
+    <nb-action *ngIf="userRole=='superadmin'" class="user-action" icon="person-outline" nbContextMenuTag="navbar_menu" [nbContextMenu]="super_admin_items">
+      
+    </nb-action>
+  </nb-actions>
+  <button *ngIf="!isLogged" status="primary" nbButton hero  [routerLink]="['/login']" ><nb-icon icon="unlock-outline"></nb-icon> Log in !</button>
+</div>

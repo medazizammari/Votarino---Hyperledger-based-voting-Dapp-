@@ -1,0 +1,287 @@
+[
+  {
+    "group": "admin",
+    "permissions": [
+      {
+        "resource": "superadmin",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "superadmin/:id",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "election",
+        "methods": ["GET", "POST"],
+        "action": "allow"
+      },
+      {
+        "resource": "election/:id",
+        "methods": ["GET", "PUT"],
+        "action": "allow"
+      },
+      {
+        "resource": "election/:id/voters",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "election/:id/candidates",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "activateElection",
+        "methods": "*",
+        "action": "deny"
+      },
+      {
+        "resource": "voter/:id",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "voter",
+        "methods": ["POST"],
+        "action": "allow"
+      },
+      {
+        "resource": "admin",
+        "methods": ["POST", "GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "admin/:id",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "admin/:id/elections",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "candidate",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "candidate",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "candidate/:id",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "candidate",
+        "methods": ["PUT"],
+        "action": "deny"
+      },
+      {
+        "resource": "vote",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "standing",
+        "methods": ["POST"],
+        "action": "allow"
+      },
+      {
+        "resource": "api-docs",
+        "methods": ["GET"],
+        "action": "allow"
+      }
+    ]
+  },
+  {
+    "group": "voter",
+    "permissions": [
+      {
+        "resource": "superadmin",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "superadmin/:id",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "election",
+        "methods": "*",
+        "action": "deny"
+      },
+      {
+        "resource": "election/:id",
+        "methods": ["GET", "PUT"],
+        "action": "allow"
+      },
+      {
+        "resource": "election/:id/voters",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "election/:id/candidates",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "activateElection",
+        "methods": "*",
+        "action": "deny"
+      },
+      {
+        "resource": "voter/:id",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "voter",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "admin*",
+        "methods": "*",
+        "action": "deny"
+      },
+      {
+        "resource": "candidate/:id",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "candidate",
+        "methods": ["POST","PUT"],
+        "action": "allow"
+      },
+      {
+        "resource": "candidate",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "vote",
+        "methods": ["POST"],
+        "action": "allow"
+      },
+      {
+        "resource": "standing",
+        "methods": ["POST"],
+        "action": "allow"
+      },
+      {
+        "resource": "api-docs",
+        "methods": ["GET"],
+        "action": "allow"
+      }
+    ]
+  },
+  {
+    "group": "superadmin",
+    "permissions": [
+      {
+        "resource": "superadmin",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "superadmin/:id",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "election",
+        "methods": "*",
+        "action": "deny"
+      },
+      {
+        "resource": "activateElection",
+        "methods": ["PUT"],
+        "action": "allow"
+      },
+      {
+        "resource": "election/*",
+        "methods": "*",
+        "action": "allow"
+      },
+      {
+        "resource": "voter/:id",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "voter",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "admin",
+        "methods": ["POST", "GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "admin/:id",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "admin/:id/elections",
+        "methods": ["GET"],
+        "action": "allow"
+      },
+      {
+        "resource": "candidate/:id",
+        "methods": ["GET"],
+        "action": "deny"
+      },
+      {
+        "resource": "candidate",
+        "methods": ["GET", "POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "candidate",
+        "methods": ["PUT"],
+        "action": "deny"
+      },
+      {
+        "resource": "vote",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "standing",
+        "methods": ["POST"],
+        "action": "deny"
+      },
+      {
+        "resource": "api-docs",
+        "methods": ["GET"],
+        "action": "allow"
+      }
+    ]
+  },
+  {
+    "group": "anonymous",
+    "permissions": [
+      {
+        "resource": "api-docs",
+        "methods": "*",
+        "action": "allow"
+      },
+      {
+        "resource": "api-docs/*",
+        "methods": "*",
+        "action": "allow"
+      }
+    ]
+  }
+]
